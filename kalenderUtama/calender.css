@@ -1,0 +1,404 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+/* header footer*/
+header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    position: fixed;
+    z-index: 2;
+
+    background-color: white;
+    box-shadow: 1px -21px 61px -4px rgba(0,0,0,0.22);
+}
+
+/* Bagian kiri header */
+.menu {
+    margin-left: 10%;
+}
+
+.menu * {
+    text-decoration: none;
+    color: #18122B;
+    font-size: large;
+}
+
+.menu *:hover {
+    color: #18122bbe;
+}
+
+/* Bagian kanan header */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.profile .notif {
+    margin-right: 10%;
+    font-size: 20px;
+}
+
+header img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+header .username {
+    margin-left: 5%;
+    font-size: small;
+}
+
+/* Footer */
+footer {
+    width: 100%;
+    padding-bottom: 40px;
+    overflow: hidden;
+}
+
+footer h4 {
+    text-align: center;
+    padding: 3px;
+}
+
+.contact {
+    font-size: small;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0 10px 30px;
+}
+
+div.copyright {
+    font-size: x-small;
+    text-align: center;
+}
+
+/* Footer Text */
+.contact *{
+    margin: 5px;
+    text-decoration: none;
+    color: #18122b61;
+    font-size: 1.2em;
+    padding: 8px;
+    transition: 0.4s;
+    transition-timing-function: ease;
+    
+}
+
+.contact *:hover {
+    transform: scale(1.1);
+}
+
+.IG:hover {
+    background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, #fd5949 45%,
+    #d6249f 60%,#285AEB 90%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.TT:hover {
+    color: #18122B;
+    text-shadow: 1px 1px #ff3353fc,
+                -1px -1px cyan;
+}
+.YT:hover {
+    color: red;
+}
+.FB:hover {
+    color: #3b5998;
+}
+.WA:hover {
+    color: #4FCE5D;
+}
+
+/* Main Content */
+body {
+    background-color:aliceblue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+} 
+
+main {
+    display: flex;
+    height: 100vh;
+    
+}
+
+.bulan {
+    width: 445px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons .prev, .icons .next {
+    transform: scale(1.5);
+}
+
+.bulan .prev:hover, .bulan .next:hover {
+    transform: scale(2);
+}
+
+.content {
+    padding: 18px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.year-month {
+    text-align: center;
+}
+
+/* Keseluruhan isi */
+.calender {
+    display: flex;
+    align-self: center;
+}
+
+
+/* Kalender kiri */
+.leftBox {
+    background-color: white;
+    margin-right: 15px;
+    border-radius: 8px;
+    box-shadow:
+    0px 0px 4.5px rgba(0, 0, 0, 0.002),
+    0px 0px 12.4px rgba(0, 0, 0, 0.007),
+    0px 0px 29.8px rgba(0, 0, 0, 0.019),
+    0px 0px 99px rgba(0, 0, 0, 0.07)
+    ;
+}
+
+table {
+    color: #18122B;
+}
+
+table .last-month, .next-month {
+    opacity: .3;
+}
+
+th, td {
+    padding: 8px;
+    text-align: center;
+    width: 40px;
+    height: 45px;
+}
+
+td.today {
+    background-color: #f1f1f1dc;
+    border-radius: 20px;
+}
+
+.dateEvent {
+    width: 50px;
+    height: 14px;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: visible;
+}
+
+.prioritasWarna *, .todayGuide{
+    width: 10px;
+    height: 10px;
+    border-radius: 2px;
+    font-size: x-small;
+}
+
+.dateEvent *{
+    max-width: 10px; /*buat expand*/
+    max-height: 10px;
+    font-size: xx-small;
+    border-radius: 2px;
+    overflow: visible;
+
+    transition: max-width 1s;
+    -webkit-transition: 1s;
+    transition-timing-function: ease;
+}
+
+.dateEvent * span a{
+    color: #18122B;
+    text-decoration: none;
+    padding: 10px;
+    white-space: nowrap;
+    visibility: collapse;
+    transition: visibility 0.1s;
+    transition-delay: 0.3s;
+    transition-timing-function: ease-in-out;
+}
+
+.dateEvent *:hover span a{
+    visibility: visible;
+}
+
+.dateEvent *:hover{
+    max-width: 200px;
+}
+
+/* penanda warna */
+.legends {
+    display: flex;
+    justify-content: space-between;
+    font-size: xx-small;
+    width: 90%;
+}
+
+.prioritasWarna{
+    width: 40px;
+    display: flex;
+    justify-content: space-between;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.LToday {
+    display: flex;
+    justify-content: space-between;
+}
+
+.LPriority {
+    display: flex;
+    justify-content: space-between;
+}
+
+.penting{
+    background-color: #ff4c4c; 
+}
+
+.biasa{
+    background-color: #ffd670;
+}
+
+.kurang{
+    background-color: #84ff9c;
+}
+
+.todayGuide{
+    background-color: #d2d2d2dc;
+    margin-left: 5px;
+}
+
+/* Right Box */
+.rightBox .ongoing, .rightBox .upcoming {
+    background-color: white;
+    border-radius: 8px;
+    min-width: 250px;
+    height: 230px;
+    padding: 20px;
+    overflow-y: auto; /*scroll*/
+    box-shadow:
+    0px 0px 4.5px rgba(0, 0, 0, 0.002),
+    0px 0px 12.4px rgba(0, 0, 0, 0.007),
+    0px 0px 29.8px rgba(0, 0, 0, 0.019),
+    0px 0px 99px rgba(0, 0, 0, 0.07)
+    ;
+}
+
+.rightBox .ongoing {
+    margin-bottom: 15px;
+}
+
+.rightBox h3 {
+    padding-bottom: 10px;
+    background-color: white;
+    position: sticky;
+}
+
+/* To-do */
+.rightBox .task {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    size: 10px;
+    transition: transform 0.5s;
+    transition-timing-function: ease;
+}
+
+.rightBox .task:hover {
+    transform: scale(1.1);
+}
+
+/* Right box content */
+.rightBox .task.penting {
+    background-color: #ff4c4c;
+}
+
+.rightBox .task.biasa {
+    background-color: #ffd670;
+}
+
+.rightBox .task.kurang {
+    background-color: #84ff9c;
+}
+
+/* Tanggal kiri */
+.task .date {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    padding-left: 15px;
+}
+
+.task .date .date-date {
+    font-size: 18px;
+}
+
+.task .date .date-month {
+    font-size: 10px;
+}
+
+/* Tittle Tengah */
+.task .title {
+    font-size: small;
+}
+
+/* Jam Kanan */
+.task .hour {
+    padding-right: 15px;
+    font-size: small;
+}
+
+/* remove href normal design */
+.eventList {
+    text-decoration: none;
+    color: #18122B;
+}
