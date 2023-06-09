@@ -144,6 +144,63 @@ div.copyright {
     color: #4FCE5D;
 }
 
+/* BUTTON */
+.addEventButton {
+    background-color: #4fb9ff;
+    font-size: xx-small;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+    border: 0;
+    border-radius: 50px;
+
+    height: 60px;
+    width: 60px;
+    z-index: 3;
+
+    overflow-x: hidden;
+
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+
+    transition: 0.2s;
+    transition-timing-function: ease-in-out;
+
+}
+
+.addEventButton:hover {
+    background-color: #349ade;
+    width: 180px;
+}
+
+/* UPDATE DELETE */
+td button {
+    font-size: x-small;
+    padding: 7px;
+    margin-left: 5px;
+
+    border: 0;
+    border-radius: 5px;
+
+    transition: 0.2s;
+    transition-timing-function: ease-in;
+}
+
+td button:hover {
+    transform: scale(1.1);
+}
+
+#updateButton {
+    background-color: #ffd670;
+}
+#deleteButton {
+    background-color: #ff4c4c;
+}
+
+
 
 body {
     background-color:aliceblue;
