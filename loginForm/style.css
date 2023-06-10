@@ -1,0 +1,235 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Scrollbar */
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 8px;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 10px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+
+/* body */
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: aliceblue;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+/* kotaknya */
+.container {
+    width: 400px;
+    min-height: 400px;
+    background: #FFF;
+    border-radius: 8px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    padding: 40px 30px;
+}
+ 
+.container .login-text {
+    color: #111;
+    font-weight: 500;
+    font-size: 1.1rem;
+    text-align: center;
+    margin-bottom: 20px;
+    display: block;
+    text-transform: capitalize;
+}
+ 
+.container .login-email .input-group {
+    width: 100%;
+    height: 50px;
+    margin-bottom: 25px;
+}
+ 
+.container .login-email .input-group input {
+    width: 100%;
+    height: 100%;
+    border: 2px solid #e7e7e7;
+    padding: 15px 20px;
+    font-size: 1rem;
+    border-radius: 30px;
+    background: transparent;
+    outline: none;
+    transition: .3s;
+}
+ 
+.container .login-email .input-group input:focus, .container .login-email .input-group input:valid {
+    border-color: #84ceff;
+}
+ 
+.container .login-email .input-group .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #84ceff;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+}
+ 
+.container .login-email .input-group .btn:hover {
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+ 
+.login-register-text {
+    color: #111;
+    font-weight: 600;
+}
+ 
+.login-register-text a {
+    text-decoration: none;
+    color: #6c5ce7;
+}
+ 
+.container-logout {
+    width: 500px;
+    min-height: 200px;
+    background: #FFF;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0,0,0,.3);
+    padding: 40px 30px;
+}
+ 
+.container-logout .login-email .input-group .btn {
+    display: block;
+    width: 100%;
+    padding: 15px 20px;
+    text-align: center;
+    border: none;
+    background: #a29bfe;
+    outline: none;
+    border-radius: 30px;
+    font-size: 1.2rem;
+    color: #FFF;
+    cursor: pointer;
+    transition: .3s;
+    margin-top: 20px;
+}
+ 
+.container-logout .login-email .input-group .btn:hover {
+    transform: translateY(-5px);
+    background: #6c5ce7;
+}
+ 
+@media (max-width: 430px) {
+    .container {
+        width: 300px;
+    }
+}
+
+
+
+/* Footer */
+footer {
+    width: 100%;
+    padding-bottom: 40px;
+    overflow: hidden;
+    margin-top: 120px;
+}
+
+footer h4 {
+    text-align: center;
+    padding: 3px;
+}
+
+.contact {
+    font-size: small;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0 10px 30px;
+}
+
+div.copyright {
+    font-size: x-small;
+    text-align: center;
+}
+
+/* Footer Text */
+.contact *{
+    margin: 5px;
+    text-decoration: none;
+    color: #18122b61;
+    font-size: 1.2em;
+    padding: 8px;
+    transition: 0.4s;
+    transition-timing-function: ease;
+
+    font-family: 'Montserrat', sans-serif;
+    
+}
+
+.contact *:hover {
+    transform: scale(1.1);
+}
+
+.IG:hover {
+    background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, #fd5949 45%,
+    #d6249f 60%,#285AEB 90%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.TT:hover {
+    color: #18122B;
+    text-shadow: 1px 1px #ff3353fc,
+                -1px -1px cyan;
+}
+.YT:hover {
+    color: red;
+}
+.FB:hover {
+    color: #3b5998;
+}
+.WA:hover {
+    color: #4FCE5D;
+}
+
+
+/* main */
+main {
+    display: flex;
+    /* height: 100vh; */
+    
+}
+
+/* header */
+header{
+    margin-top: 120px;
+}

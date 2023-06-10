@@ -25,7 +25,7 @@
 <body>
     <header>
         <div class="menu">
-            <a class="Home" href="../kalenderUtama/index.php">Home</a>
+            <a class="Home" href="../kalenderUtama/KalenderUtama.php">Home</a>
         </div>
         <div class="profile">
             <div class="notif">🔔</div>

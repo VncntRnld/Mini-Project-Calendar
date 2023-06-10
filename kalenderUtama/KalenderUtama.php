@@ -1,5 +1,11 @@
 <?php
     include "../koneksi.php";
+
+    session_start();
+
+    if(!isset($_SESSION["username"])){
+        header("Location: ../loginForm/login.php");
+    }
 ?>
 
 
@@ -13,7 +19,7 @@
 
     
     <!--IMPORT IMPORT MAS E-->
-    <link rel="stylesheet" type="text/css" href="calender.css">
+    <link rel="stylesheet" type="text/css" href="calender.css?v=<?php echo time() ?>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -23,12 +29,15 @@
 <body>
     <header> 
         <div class="menu">
-            <a class="Home" href="../kalenderUtama/index.html">Home</a>
+            <a class="Home" href="../kalenderUtama/KalenderUtama.php">Home</a>
         </div>
         <div class="profile">
             <div class="notif">🔔</div>
-            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixclass=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
-            <div class="username">Graciano</div>
+            <div class="username"><?php echo $_SESSION["username"] ?></div>
+
+            <!-- Logout Button -->
+            <a href="../loginForm/logout.php" class="logoutButton"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #18122B;"></i></a>
+        
         </div>
     </header>
     
@@ -113,8 +122,10 @@
                 
             </div>
         </div>
-
-        <button class="addEventButton" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
+        
+        <a href="">
+            <button class="addEventButton" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
+        </a>
 
     </main>
 
@@ -136,4 +147,4 @@
 
 </body>
 </html>
-<script src="Script.js"></script>
+<script src="Script.js?=v<?php echo time() ?>>"></script>

@@ -128,7 +128,7 @@ function updateBox() {
 
             response.forEach( ev => {
                 console.log(ev["date"] + " " + date.getDate());
-                if (ev["date"] == date.getDate()) {
+                if (ev["date"] == date.getDate() && currMonth == date.getMonth()) {
                     ongoingStr += "<a class='eventList' href='../eventDetail/eventDetail.php?id=" + ev["idEvent"] + "'><div class='task " + ev["priority"] +"'><div class='date'><div class='date-date'>" + ev["date"] + "</div><div class='date-month'>" + monthList[ev["month"]] + "</div></div><div class='title'>" + ev["namaEvent"] + "</div><div class='hour'>" + ev["startTime"].substring(0,5) + "</div></div></a>";
                 }
                 else{
@@ -168,4 +168,3 @@ function addEventReset() {
     document.getElementById("addEventIcon").innerHTML = "";
 }
 
-// function addEventClick()

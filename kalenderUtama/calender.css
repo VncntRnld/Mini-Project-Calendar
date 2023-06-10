@@ -67,18 +67,27 @@ header {
     margin-right: 10%;
     font-size: 20px;
 }
-
-header img {
+ 
+/*header img {
     width: 25px;
     height: 25px;
     object-fit: cover;
     border-radius: 50px;
-}
+} */
 
 header .username {
     margin-left: 5%;
     font-size: small;
 }
+
+header .logoutButton {
+    margin-left: 15%;
+}
+
+header .logoutButton:hover {
+    transform: scale(1.1);
+}
+
 
 /* Footer */
 footer {
