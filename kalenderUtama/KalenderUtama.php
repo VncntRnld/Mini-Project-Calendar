@@ -123,9 +123,7 @@
             </div>
         </div>
         
-        <a href="">
-            <button class="addEventButton" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
-        </a>
+        <button class="addEventButton" onclick="addEventClick()" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
 
     </main>
 

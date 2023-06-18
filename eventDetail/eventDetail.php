@@ -2,6 +2,12 @@
 
     include "../koneksi.php";
 
+    session_start();
+
+    if(!isset($_SESSION["username"])){
+        header("Location: ../loginForm/login.php");
+    }
+
     $sql = "SELECT * FROM event WHERE idEvent=" .$_GET["id"];
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
@@ -15,7 +21,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- IMPORT -->
-    <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="detail.css?v=<?php echo time() ?>">
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
@@ -23,14 +29,17 @@
     <title><?php echo $row['namaEvent']; ?></title>
 </head>
 <body>
-    <header>
+<header> 
         <div class="menu">
             <a class="Home" href="../kalenderUtama/KalenderUtama.php">Home</a>
         </div>
         <div class="profile">
             <div class="notif">🔔</div>
-            <img src="https://images.unsplash.com/photo-1463453091185-61582044d556?ixlib=rb-4.0.3&ixclass=MnwxMjA3fDB8MHxzZWFyY2h8M3x8cmFuZG9tJTIwcGVyc29ufGVufDB8fDB8fA%3D%3D&w=1000&q=80" alt="">
-            <div class="username">Graciano</div>
+            <div class="username"><?php echo $_SESSION["username"] ?></div>
+
+            <!-- Logout Button -->
+            <a href="../loginForm/logout.php" class="logoutButton"><i class="fa-solid fa-right-from-bracket fa-lg" style="color: #18122B;"></i></a>
+        
         </div>
     </header>
 
@@ -53,20 +62,22 @@
                     <table>
                         <tr>
                             <td>📆Start</td>
-                            <td><?php echo date('d F Y, H:i', strtotime($row['startDate'])); ?> WIB</td>
+                            <td><?php $startdate = $row['startDate']; $starttime = $row['startTime'];
+                            echo date('d F Y, H:i', strtotime("$startdate $starttime")); ?> WIB</td>
                         </tr>
                         <tr>
                             <td>🏁End</td>
-                            <td><?php echo date('d F Y, H:i', strtotime($row['endDate'])); ?> WIB</td>
+                            <td><?php $enddate = $row['endDate']; $endtime = $row['endTime'];
+                            echo date('d F Y, H:i', strtotime("$enddate $endtime")); ?> WIB</td>
                         </tr>
                         <tr>
                             <td>⏱️Duration</td>
                             <td><?php
-                                    $date1 = new DateTime($row["startDate"]);
-                                    $date2 = new DateTime($row["endDate"]);
+                                    $date1 = new DateTime("$startdate $starttime");
+                                    $date2 = new DateTime("$enddate $endtime");
 
                                     $diff = $date1->diff($date2);
-                                    echo $diff->format("%a Day"); // Kurang jam nya
+                                    echo $diff->format("%a Days %h Hours %i Minutes"); // Kurang jam nya
                                 ?>
                             </td>
                         </tr>
@@ -80,8 +91,8 @@
                         </tr>
                         <tr>
                             <td colspan="2">
-                                <button id="updateButton"><i class="fa-sharp fa-solid fa-pen fa-lg" style="color: #ffffff;"> update</i></button>
-                                <button id="deleteButton"><i class="fa-sharp fa-solid fa-trash-can fa-lg" style="color: #ffffff;"> delete</i></button>
+                                <a href="../formKalender/formUpdate.php?id=<?php echo $_GET["id"] ?>"><button id="updateButton"><i class="fa-sharp fa-solid fa-pen fa-lg" style="color: #ffffff;"> update</i></button></a>
+                                <a href="../formKalender/formDelete.php?id=<?php echo $_GET["id"] ?>"><button id="deleteButton"><i class="fa-sharp fa-solid fa-trash-can fa-lg" style="color: #ffffff;"> delete</i></button></a>
                             </td>
                         </tr>
                     </table>
@@ -92,15 +103,15 @@
                 <!-- Bagian Atas -->
                 <div class="title">
                     <div class="titleTitle">
-                        <h3>Attachment</h3>
+                        <h3>Attachment :</h3>
                     </div>
                 </div>
                 <!-- Bagian Bawah -->
-                <img src="../resource/ttsProgweb.png" alt="">
+                <img src="<?php echo "../formKalender/".$row["imagePath"]; ?>" alt="" class="gambar">
             </div>
         </div>
 
-        <button class="addEventButton" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
+        <button class="addEventButton" onclick="addEventClick()" onmouseover="addEventHover()" onmouseout="addEventReset()"><i class="fa-solid fa-plus fa-2xl" id="addEventIcon" style="color: #ffffff;"></i></button>
 
     </main>
 
@@ -122,4 +133,4 @@
 </body>
 </html>
 
-<script src="Script.js"></script>
+<script src="Script.js?=v<?php echo time() ?>"></script>

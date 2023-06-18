@@ -160,6 +160,10 @@ function callEvent() {
 
 
 // Tambahan buat addEventButton :v
+function addEventClick() {
+    location.href = "../formKalender/formCreate.php";
+}
+
 function addEventHover() {
     document.getElementById("addEventIcon").innerHTML = " add event";
 }
@@ -167,4 +171,5 @@ function addEventHover() {
 function addEventReset() {
     document.getElementById("addEventIcon").innerHTML = "";
 }
+
 

@@ -1,0 +1,388 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+
+/* Scrollbar */
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+    background: white;
+    border-radius: 8px;
+}
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #cfcfcf;
+    border-radius: 10px;
+}
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #b3b3b3;
+}
+
+
+
+
+
+/* body */
+body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: aliceblue;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    
+}
+
+
+
+
+
+/* header */
+header {
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content:space-between ;
+    position: fixed;
+    z-index: 2;
+
+    background-color: white;
+    box-shadow: 1px -21px 61px -4px rgba(0,0,0,0.22);
+    top: 0;
+    
+}
+
+/* Bagian kiri header */
+.menu {
+    margin-left: 10%;
+}
+
+.menu * {
+    text-decoration: none;
+    color: #18122B;
+    font-size: large;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.menu *:hover {
+    color: #18122bbe;
+}
+
+/* Bagian kanan header */
+.profile {
+    display: flex;
+    align-items: center;
+    margin-right: 10%;
+}
+
+.profile .notif {
+    margin-right: 10%;
+    font-size: 20px;
+}
+
+header img {
+    width: 25px;
+    height: 25px;
+    object-fit: cover;
+    border-radius: 50px;
+}
+
+header .username {
+    margin-left: 5%;
+    font-size: small;
+    font-family: 'Montserrat', sans-serif;
+}
+
+header .logoutButton {
+    margin-left: 15%;
+}
+
+header .logoutButton:hover {
+    transform: scale(1.1);
+}
+
+
+
+/* main */
+main {
+    display: flex;    
+}
+
+
+
+
+/* Footer */
+footer {
+    width: 100%;
+    padding-bottom: 40px;
+    overflow: hidden;
+    margin-top: 120px;
+}
+
+footer h4 {
+    text-align: center;
+    padding: 3px;
+}
+
+.contact {
+    font-size: small;
+    text-align: center;
+    padding: 10px;
+    margin: 10px 0 10px 30px;
+}
+
+div.copyright {
+    font-size: x-small;
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Footer Text */
+.contact *{
+    margin: 5px;
+    text-decoration: none;
+    color: #18122b61;
+    font-size: 1.2em;
+    padding: 8px;
+    transition: 0.4s;
+    transition-timing-function: ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.contact *:hover {
+    transform: scale(1.1);
+}
+
+.IG:hover {
+    background: radial-gradient(circle at 30% 107%, 
+    #fdf497 0%, #fdf497 5%, #fd5949 45%,
+    #d6249f 60%,#285AEB 90%);
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+}
+.TT:hover {
+    color: #18122B;
+    text-shadow: 1px 1px #ff3353fc,
+                -1px -1px cyan;
+}
+.YT:hover {
+    color: red;
+}
+.FB:hover {
+    color: #3b5998;
+}
+.WA:hover {
+    color: #4FCE5D;
+}
+
+
+
+
+
+
+/* create new event */
+fieldset{
+    margin-top: 120px;
+    width: 500px;
+    min-height: 400px;
+    background: white ;
+    border: none;
+    border-radius: 8px;
+    box-shadow:
+    0px 0px 4.5px rgba(0, 0, 0, 0.002),
+    0px 0px 12.4px rgba(0, 0, 0, 0.007),
+    0px 0px 29.8px rgba(0, 0, 0, 0.019),
+    0px 0px 99px rgba(0, 0, 0, 0.07)
+    ;
+    padding: 40px 30px;
+}
+
+fieldset h2{
+    text-align: center;
+}
+
+
+
+/*input nama event*/
+.nama{
+    width: 440px;
+    background: white;
+    border-radius: 8px;
+    padding: 30px 30px 0px 30px;
+}
+
+.nama input{
+    border: inset;
+    font-size: 1rem;
+    text-transform: capitalize;
+    border-radius: 8px;
+    width: 300px;
+}
+.input-nama{
+    /* display: flex; */
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
+}
+#namaEvent{
+    padding: 6px;
+    width: 100%;
+}
+
+
+
+/*input location*/
+.input-location{
+    justify-content: center;
+    align-items: center;
+}
+#location{
+    padding: 6px;
+    width: 100%;
+}
+
+
+
+/*input waktu*/
+.waktu{
+    width: 440px;
+    background: white;
+    border-radius: 8px;
+    padding: 30px 30px 0px 30px;
+}
+.waktu input{
+    border: inset;
+    font-size: 1rem;
+    display: block;
+    text-transform: capitalize;
+    border-radius: 8px;
+}
+.Start, .End{
+    display: flex;
+}
+#startDate, #startTime, #endDate, #endTime {
+    padding: 6px;
+    width: 100%;
+}
+.startTime, .endTime{
+    margin-left: 50px;
+}
+
+
+/*input prioritas*/
+.prioritas {
+    width: 385px;
+    background: white;
+    border-radius: 8px;
+    border-style: groove;
+    padding: 30px 30px 0px 40px;
+    margin-left: 30px;
+}
+div.prioritas{
+    background:  white;
+    padding: 0px 30px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
+.input-prior{
+    display: inline-block;
+    margin-right: 10px;
+}  
+.input-prior input[type="radio"] {
+    vertical-align: middle;
+    margin-right: 5px;
+}
+
+
+
+
+/*input gambar*/
+.gambar{
+    width: 400px;
+    height: 100px;
+    background:  white;
+    padding: 30px 30px 0px 30px;
+    border-style: dotted;
+    border-radius: 8px;
+    border-color: #afafaf;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin-left: 20px;
+    
+}
+.gambar svg {
+    height: 1em;
+    margin-bottom: 10px;
+}
+.gambar label input{
+    font-size: 16px;
+}
+
+.gambar input[type="file"] {
+    display: none;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+.gambar label {
+    cursor: pointer;
+}
+
+/* submit dan reset */
+.submit button,
+.reset button {
+  background-color: #84ceff;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  display: block;
+  width:100px;
+  border-radius: 30px;
+    font-size: 1.2rem;
+    transition: 5ms;
+    
+}
+.submit{
+    margin-right: 20px;
+}
+.submit button:active,
+.reset button:active {
+  background-color: #a29bfe;
+}
+.submit button:hover,
+.reset button:hover {
+  background-color: #a29bfe;
+}
+.klik{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+    margin-right: 30px;
+}
+
+/* WARNING */
+#warning {
+    margin-left: -10px;
+    text-align: center;
+    color: red;
+}
